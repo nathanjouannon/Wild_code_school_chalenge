@@ -1,0 +1,15 @@
+.wcs-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+.wcs-header-img {
+    width: 90px;
+    margin-right: 20px;
+}
+.wcs-header-title {
+    font-size: 50px;
+}
