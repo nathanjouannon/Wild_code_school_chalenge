@@ -7,9 +7,9 @@ function List() {
             <div className="wcs-list-container">
                 {/* remplacer ici par la liste retournée par le server */}
 
-                <div class="wcs-list-item">Eleftheria</div>
-                <div class="wcs-list-item">Gennadios</div>
-                <div class="wcs-list-item">Lysimachos</div>
+                <div className="wcs-list-item">Eleftheria</div>
+                <div className="wcs-list-item">Gennadios</div>
+                <div className="wcs-list-item">Lysimachos</div>
             </div>
         </div>
     )
