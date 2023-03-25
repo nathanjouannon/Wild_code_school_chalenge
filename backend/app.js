@@ -22,9 +22,8 @@ app.use((req, res, next) => {
 // gestion des routes :
 
 const name = require('./modeles/name')
-app.post('api/addName', (req, res, next) => {
-    const nameInput = JSON.parse(req.body.newName)
-    console.log(nameInput)
+app.post('/api/nameInput', (req, res, next) => {
+    const nameInput = JSON.parse(req.body.nameInput)
     const newName = new name({
         ...nameInput
     })

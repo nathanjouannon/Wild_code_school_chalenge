@@ -3,11 +3,11 @@ import {useState} from 'react'
 import axios from 'axios'
 
 function Form() {
-    const [newName, setNewName] = useState('');
+    const [nameInput, setNewNameInput] = useState('');
 
     const submitName = () => {
-        axios.post('http://localhost:3001/api/addName', {newName : newName})
-    }
+        axios.post('https://localhost:3000/api/nameInput',  {nameInput: nameInput})
+    };
 
     return (
         <div className="wcs-form-container">
