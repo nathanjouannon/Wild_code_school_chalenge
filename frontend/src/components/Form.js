@@ -3,7 +3,7 @@ import {useState} from 'react'
 import axios from 'axios'
 
 function Form() {
-    const [nameInput, setNewNameInput] = useState('');
+    const [nameInput, setNameInput] = useState('');
 
     const submitName = () => {
         axios.post('https://localhost:3000/api/nameInput',  {nameInput: nameInput})
@@ -18,7 +18,7 @@ function Form() {
                     type="text" 
                     placeholder="Charalampos" 
                     className="wcs-form-input"
-                    onChange={(e) => setNewName(e.target.value)}
+                    onChange={(e) => setNameInput(e.target.value)}
                 />
                 <button 
                     className="wcs-form-submit" 
