@@ -21,10 +21,10 @@ app.use((req, res, next) => {
 
 // gestion des routes :
 
-const name = require('./modeles/name')
-app.post('/api/nameInput', (req, res, next) => {
-    const nameInput = JSON.parse(req.body.nameInput)
-    const newName = new name({
+const Name = require('./modeles/name')
+app.post('/api/names', (req, res, next) => {
+    const nameInput = JSON.parse(req.body.newNameInput)
+    const newName = new Name({
         ...nameInput
     })
     newName.save()
@@ -32,5 +32,11 @@ app.post('/api/nameInput', (req, res, next) => {
         .catch(error => res.status(400).json({error}))
 })
 
+// OK, reste à envoyé les données au front
+app.get('/api/names', (req, res, next) => {
+    Name.find()
+        .then((names) => res.status(200).json({names}))
+        .catch(error => res.status(400).json({error}))
+})
 
 module.exports = app;
