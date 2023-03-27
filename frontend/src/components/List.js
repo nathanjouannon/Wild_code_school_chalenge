@@ -1,4 +1,3 @@
-import { response } from '../../../backend/app';
 import '../styles/List.css'
 
 function List() {
@@ -7,6 +6,7 @@ function List() {
             <h2 className="wcs-list-title"> Membres de l'équipage</h2>
             <div className="wcs-list-container">
                 {/* remplacer ici par la liste retournée par le server */}
+                
 
                 <div className="wcs-list-item">Eleftheria</div>
                 <div className="wcs-list-item">Gennadios</div>
