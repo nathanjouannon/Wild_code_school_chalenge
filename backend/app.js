@@ -23,13 +23,14 @@ app.use((req, res, next) => {
 
 const Name = require('./modeles/name')
 app.post('/api/names', (req, res, next) => {
-    const nameInput = JSON.parse(req.body.newNameInput)
-    const newName = new Name({
-        ...nameInput
-    })
-    newName.save()
-        .then(() => res.status(201).json({message : "nom ajouté !"}))
-        .catch(error => res.status(400).json({error}))
+    const name = new Name({ name: req.body.name });
+    name.save()
+        .then(() => {
+          res.status(201).json({ message: 'Name added successfully' });
+        })
+        .catch((error) => {
+          res.status(400).json({ error });
+        });
 })
 
 // OK, reste à envoyé les données au front
