@@ -9,7 +9,11 @@ function Form() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:4200/api/names', {newNameInput: nameInput})
+        axios.post('http://localhost:4200/api/names', {name: nameInput},  {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
             .then(function (response) {
                 console.log(response);
                 // Traiter la réponse ici
