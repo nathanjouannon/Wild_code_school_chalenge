@@ -12,27 +12,24 @@ function List() {
     useEffect(() => {
         axios.get('http://localhost:4200/api/names')
           .then(response => {
-            setNames(response.data.names)
+            const namesArray = response.data.names.map(nameObj => nameObj.name);
+            setNames(namesArray)
           })
           .catch(error => {
             console.log(error);
           });
       }, []);
+    console.log(names)
 
-    const nameList = names.map((name) => (
-        <div className='wcs-list-item' key={name._id}>{name}</div>
-    ))
-    console.log(nameList)
+    const nameList = names.map((element, index) => 
+        <div className='wcs-list-item' key={index}>{element}</div>
+    );
 
     return(
         <div className="wcs-list">
             <h2 className="wcs-list-title"> Membres de l'équipage</h2>
             <div className="wcs-list-container">
-                <div>{nameList}</div>
-    
-                <div className="wcs-list-item">Eleftheria</div>
-                <div className="wcs-list-item">Gennadios</div>
-                <div className="wcs-list-item">Lysimachos</div>
+                {nameList}
             </div>
         </div>
     )

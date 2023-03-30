@@ -8,7 +8,7 @@ function Form() {
     const [nameInput, setNameInput] = useState('');
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         axios.post('http://localhost:4200/api/names', {name: nameInput},  {
             headers: {
                 'Content-Type': 'application/json'
