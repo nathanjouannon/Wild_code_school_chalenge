@@ -19,10 +19,9 @@ function List() {
             console.log(error);
           });
       }, []);
-    console.log(names)
 
     const nameList = names.map((element, index) => 
-        <div className='wcs-list-item' key={index}>{element}</div>
+        <a className='wcs-list-item' key={index} href={"http://localhost:3000/"+index}>{element}</a>
     );
 
     return(
